@@ -19,5 +19,5 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
 
-//TODO: make images uploadable as well
+//TODO: make images loadable as well
 //give each post a banner image, and a default one if not

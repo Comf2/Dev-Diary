@@ -1,4 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Raleway:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --dark-400: #444455;
+  --dark-500: #2e2e3a;
+  --light-blue: #cefdff;
+  --light-red: #ffbcb5;
+  --white: #ffffff;
+}
 body {
-    background-color: #121212;
-    color:white;
+  margin: 0;
+  font-family: 'Raleway';
+  background-color: #2e2e3a;
+  color: var(--white);
+}
+.main-header {
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  background-image: url('../svg/stars.svg');
+  background-repeat: repeat;
+  background-size: 200%;
+  isolation: isolate;
+  position: relative;
+  text-align: center;
+}
+.main-header::after {
+  content: '';
+  background-image: url('../svg/bottom-wave.svg'), url('../svg/center-wave.svg'),
+    url('../svg/top-wave.svg');
+  position: absolute;
+  min-height: 20vh;
+  inset: 0;
+  bottom: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%;
+}
+@media screen and (max-width: 1000px) {
+  .main-header::after {
+    background-image: url('../svg/bottom-wave-mobile.svg'),
+      url('../svg/center-wave-mobile.svg'), url('../svg/top-wave-mobile.svg');
+  }
+}
+.main-header h1 {
+  font-size: clamp(3rem, 25vw, 4.5rem);
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 20px var(--light-blue), 0 0 30px var(--light-blue),
+    0 0 40px var(--light-blue), 0 0 55px var(--light-blue),
+    0 0 75px var(--light-blue);
 }

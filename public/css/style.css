@@ -16,23 +16,53 @@ body {
   background-color: #2e2e3a;
   color: var(--white);
 }
+/* --- nav ---  */
+.main-nav {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  /* background-color: var(--dark-400); */
+  width: 100%;
+  padding: 2vmin 5vmin;
+  font-size: 1.5em;
+  z-index: 999;
+
+}
+.account-button {
+  background-color: var(--dark-400);
+  border-radius: 100vw;
+  cursor: pointer;
+  width: 2em;
+  aspect-ratio: 1/1;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease;
+}
+.account-button:hover {
+  transform: translateY(-2px);
+}
+.account-button i {
+  border-radius: 1/1;
+}
+/* --- header --- */
 .main-header {
   min-height: 75vh;
   display: grid;
   place-items: center;
   background-image: url('../svg/stars.svg');
   background-repeat: repeat;
-  background-size: 200%;
+  background-size: 100rem;
   isolation: isolate;
   position: relative;
   text-align: center;
+  min-height: 100vh;
+
 }
 .main-header::after {
   content: '';
   background-image: url('../svg/bottom-wave.svg'), url('../svg/center-wave.svg'),
     url('../svg/top-wave.svg');
   position: absolute;
-  min-height: 20vh;
   inset: 0;
   bottom: 0;
   z-index: -1;
@@ -40,17 +70,28 @@ body {
   background-position: bottom;
   background-size: 100%;
 }
-@media screen and (max-width: 1000px) {
-  .main-header::after {
-    background-image: url('../svg/bottom-wave-mobile.svg'),
-      url('../svg/center-wave-mobile.svg'), url('../svg/top-wave-mobile.svg');
-  }
-}
+
 .main-header h1 {
-  font-size: clamp(3rem, 25vw, 4.5rem);
+  font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 600;
   color: #ffffff;
   text-shadow: 0 0 20px var(--light-blue), 0 0 30px var(--light-blue),
     0 0 40px var(--light-blue), 0 0 55px var(--light-blue),
     0 0 75px var(--light-blue);
+}
+
+@media screen and (max-width: 1000px) {
+  .main-header::after {
+    background-image: url('../svg/bottom-wave-tablet.svg'),
+      url('../svg/center-wave-tablet.svg'), url('../svg/top-wave-tablet.svg');
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-header::after {
+    background-image: url('../svg/bottom-wave-mobile.svg'),
+      url('../svg/center-wave-mobile.svg'), url('../svg/top-wave-mobile.svg');
+  }
+  .main-header {
+    min-height: 75vh;
+  }
 }

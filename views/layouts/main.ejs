@@ -24,15 +24,18 @@
       src="/js/script.js"
       defer
     ></script>
+    <script
+      src="https://kit.fontawesome.com/3040f9f00d.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <!-- adds the content of our actual pages -->
     <div class="container">
-      <%- include('../partials/header.ejs')%>
-      <main class="main">
-        <%- body %>
-      </main> 
+      <%- include('../partials/nav.ejs') %> <%-
+      include('../partials/header.ejs')%>
+      <main class="main"><%- body %></main>
       <%- include('../partials/footer.ejs')%>
     </div>
   </body>
